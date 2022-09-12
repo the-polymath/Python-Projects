@@ -1,4 +1,4 @@
-from player import HumanPlayer, ComputerPlayer
+from player import HumanPlayer, ComputerPlayer, SmartComputerPlayer
 
 
 class TicTacToe():
@@ -13,7 +13,8 @@ class TicTacToe():
 
     @staticmethod
     def print_board_nums():
-        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        number_board = [[str(i) for i in range(j*3, (j+1)*3)]
+                        for j in range(3)]
         for row in number_board:
             print('| ' + ' | '.join(row) + ' |')
 
@@ -106,6 +107,7 @@ if __name__ == "__main__":
 
     x_player = HumanPlayer('X')
     o_player = ComputerPlayer('O')
+    o_smart_player = SmartComputerPlayer('O')
 
     game = TicTacToe()
-    play(game, x_player, o_player, print_game=True)
+    play(game, x_player, o_smart_player, print_game=True)
